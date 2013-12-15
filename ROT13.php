@@ -33,7 +33,7 @@ if (!defined('MEDIAWIKI')) {
 	die( 'This file is a MediaWiki extension. It is not a valid entry point' );
 }
 
-$wgExtensionCredits['other'][] = array(
+$wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'ROT13',
 	'author' => 'Nathan Larson',
@@ -58,3 +58,4 @@ function ROT13RenderParserFunction ( $parser, $param1 = '', $param2 = '' ) {
 	}
 	return $output;
 }
+
