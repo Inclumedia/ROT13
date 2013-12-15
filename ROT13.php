@@ -50,6 +50,7 @@ function ROT13Setup( &$parser ) {
 }
 
 function ROT13RenderParserFunction ( $parser, $param1 = '', $param2 = '' ) {
+	$parser->disableCache();
 	$output = $param2;
 	$rights = $parser->getUser()->getRights();
 	if ( !in_array ( $param1, $rights ) ) {
