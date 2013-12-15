@@ -11,7 +11,7 @@ $messages = array();
  * @author Nathan Larson (Leucosticte)
  */
 $messages['en'] = array(
-    'rot13-desc' => 'This extension adds a ROT13 parser function displaying the contents as ROT13-encrypted, except for users with a specified right.'
+    'rot13-desc' => 'Adds a ROT13 parser function that displays content as ROT13-encrypted, except for users with a specified right.'
 );
 
 $magicWords = array();

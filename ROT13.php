@@ -2,8 +2,8 @@
 /**
  * ROT13 MediaWiki extension.
  *
- * This extension adds a ROT13 parser function displaying the contents,
- * except for specified users, as ROT13-encrypted.
+ * This extension adds a parser function that displays content as
+ * ROT13-encrypted, except for users with a specified right.
  *
  * Written by Leucosticte
  * http://www.mediawiki.org/wiki/User:Leucosticte
