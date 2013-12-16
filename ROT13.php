@@ -39,7 +39,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'author' => 'Nathan Larson',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:ROT13',
 	'descriptionmsg' => 'rot13-desc',
-	'version' => '1.0.0',
+	'version' => '1.0.1',
 );
 
 $wgHooks['ParserFirstCallInit'][] = 'ROT13Setup';
@@ -72,4 +72,3 @@ function ROT13RenderParserFunction ( $parser, $param1 = '', $param2 = '' ) {
 	}
 	return $output;
 }
-
