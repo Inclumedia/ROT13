@@ -72,3 +72,4 @@ function ROT13RenderParserFunction ( $parser, $param1 = '', $param2 = '' ) {
 	}
 	return $output;
 }
+
