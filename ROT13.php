@@ -29,7 +29,7 @@
 
 # Alert the user that this is not a valid entry point to MediaWiki if the user tries to access the
 # extension file directly.
-if (!defined('MEDIAWIKI')) {
+if( !defined('MEDIAWIKI' ) ) {
 	die( 'This file is a MediaWiki extension. It is not a valid entry point' );
 }
 
@@ -43,10 +43,24 @@ $wgExtensionCredits['parserhook'][] = array(
 );
 
 $wgHooks['ParserFirstCallInit'][] = 'ROT13Setup';
+$wgHooks['ParserBeforeStrip'][] = 'ROT13onParserBeforeStrip';
+$wgROT13Right = 'block';
 $wgExtensionMessagesFiles['ROT13'] = __DIR__ . '/ROT13.i18n.php';
 
 function ROT13Setup( &$parser ) {
 	$parser->setFunctionHook( 'rot13', 'ROT13RenderParserFunction' );
+}
+
+function ROT13onParserBeforeStrip( &$parser, &$text, &$strip_state ) {
+	global $wgROT13Right;
+	if( strpos ( $text, '__ROT13__' ) ) {
+		$parser->disableCache();
+		$rights = $parser->getUser()->getRights();
+		$text = str_replace( '__ROT13__', '', $text );
+		if( !in_array ( $wgROT13Right, $rights ) ) {
+			$text = str_rot13 ( $text );
+		}
+	}
 }
 
 function ROT13RenderParserFunction ( $parser, $param1 = '', $param2 = '' ) {
@@ -58,4 +72,3 @@ function ROT13RenderParserFunction ( $parser, $param1 = '', $param2 = '' ) {
 	}
 	return $output;
 }
-
