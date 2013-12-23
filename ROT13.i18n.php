@@ -1,17 +1,19 @@
 <?php
 /**
- * Internationalisation for ROT13
- *
- * @file
- * @ingroup Extensions
- */
+* Internationalisation for ROT13
+*
+* @file
+* @ingroup Extensions
+*/
 $messages = array();
 
 /** English
- * @author Nathan Larson (Leucosticte)
- */
+* @author Nathan Larson (Leucosticte)
+*/
 $messages['en'] = array(
-    'rot13-desc' => 'Adds a ROT13 parser function that displays content as ROT13-encrypted, except for users with a specified right'
+    'rot13-desc' => 'Adds parser functions that display content as ROT13- or otherwise substitution cipher-encrypted, except for users with a specified right',
+    'rot13-wrong-strlen' => 'The encyrption key that was provided has $1 characters; it was supposed to be $2 characters.',
+    'rot13-odd-number' => '$wgROT13Strlen is set to $1; it is supposed to be an even number.'
 );
 
 /** German (Deutsch)
@@ -24,8 +26,9 @@ $messages['de'] = array(
 $magicWords = array();
 
 /** English
- * @author Nathan Larson (Leucosticte)
- */
+* @author Nathan Larson (Leucosticte)
+*/
 $magicWords['en'] = array(
    'rot13' => array( 0, 'rot13' ),
+   'cipher' => array( 0, 'cipher' ),
 );
