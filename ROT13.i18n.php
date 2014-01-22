@@ -20,7 +20,7 @@ $messages['en'] = array(
 * @author Kghbln
 */
 $messages['de'] = array(
-    'rot13-desc' => 'Ermöglicht die Verschlüsselung der Seiteninhalte mit dem ROT13-Verfahren, so dass sie nur noch mit besonderer Berechtigung eingesehen werden können'
+    'rot13-desc' => 'Ermöglicht die Verschlüsselung der Seiteninhalte mit dem ROT13-Verfahren, so dass sie nur noch mit besonderer Berechtigung eingesehen werden können',
     'rot13-wrong-strlen' => 'Der zur Verschlüsselung angegebene Schlüssel hat eine Länge von {{PLURAL:$1|einem Zeichen|$1 Zeichen}}. Die Länge muss indes $2 {{PLURAL:$2|Zeichen}} betragen.',
     'rot13-odd-number' => 'Der Konfigurationsparameter <code>$wgROT13Strlen</code> wurde mit „$1“ festgelegt, muss aber einer geraden Zahl entsprechen.'
 );
