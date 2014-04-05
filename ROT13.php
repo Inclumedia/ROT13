@@ -51,6 +51,7 @@ $wgROT13Right = 'block';
 $wgROT13Strlen = 52;
 $wgExtensionMessagesFiles['ROT13'] = __DIR__ . '/ROT13.i18n.php';
 $wgROT13DefaultKey = 'abcdefghijklmnopqrstuvwxyznopqrstuvwxyzabcdefghijklm';
+$wgGroupPermissions['sysop']['encrypt'] = true;
 
 function ROT13Setup( &$parser ) {
         $parser->setFunctionHook( 'rot13', 'ROT13RenderParserFunction' );
