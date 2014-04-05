@@ -40,14 +40,17 @@ $wgExtensionCredits['parserhook'][] = array(
         'author' => 'Nathan Larson',
         'url' => 'https://www.mediawiki.org/wiki/Extension:ROT13',
         'descriptionmsg' => 'rot13-desc',
-        'version' => '1.0.2',
+        'version' => '1.0.3',
 );
 
 $wgHooks['ParserFirstCallInit'][] = 'ROT13Setup';
 $wgHooks['ParserBeforeStrip'][] = 'ROT13onParserBeforeStrip';
+$wgAutoloadClasses['SpecialEncrypt'] = __DIR__ . '/SpecialEncrypt.php';
+$wgSpecialPages['Encrypt'] = 'SpecialEncrypt';
 $wgROT13Right = 'block';
 $wgROT13Strlen = 52;
 $wgExtensionMessagesFiles['ROT13'] = __DIR__ . '/ROT13.i18n.php';
+$wgROT13DefaultKey = 'abcdefghijklmnopqrstuvwxyznopqrstuvwxyzabcdefghijklm';
 
 function ROT13Setup( &$parser ) {
         $parser->setFunctionHook( 'rot13', 'ROT13RenderParserFunction' );
