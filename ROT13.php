@@ -40,14 +40,14 @@ $wgExtensionCredits['parserhook'][] = array(
         'author' => 'Nathan Larson',
         'url' => 'https://www.mediawiki.org/wiki/Extension:ROT13',
         'descriptionmsg' => 'rot13-desc',
-        'version' => '1.0.3',
+        'version' => '1.1.0',
 );
 
 $wgHooks['ParserFirstCallInit'][] = 'ROT13Setup';
 $wgHooks['ParserBeforeStrip'][] = 'ROT13onParserBeforeStrip';
 $wgAutoloadClasses['SpecialEncrypt'] = __DIR__ . '/SpecialEncrypt.php';
 $wgSpecialPages['Encrypt'] = 'SpecialEncrypt';
-$wgROT13Right = 'block';
+$wgROT13Right = 'encrypt';
 $wgROT13Strlen = 52;
 $wgExtensionMessagesFiles['ROT13'] = __DIR__ . '/ROT13.i18n.php';
 $wgROT13DefaultKey = 'abcdefghijklmnopqrstuvwxyznopqrstuvwxyzabcdefghijklm';
@@ -84,7 +84,7 @@ function ROT13onParserBeforeStrip( &$parser, &$text, &$strip_state ) {
 	return true;
 }
 
-#{{#cipher: block|abcdefghijklmnopqrstuvwxyzqwertyuiopasdfghjklzxcvbnm|Foo}}
+#{{#cipher: encrypt|abcdefghijklmnopqrstuvwxyzqwertyuiopasdfghjklzxcvbnm|Foo}}
 function ROT13RenderParserFunction ( $parser, $param1 = '', $param2 = '' ) {
         $parser->disableCache();
         $output = $param2;
